@@ -3,7 +3,7 @@
 
 ### Sacrifices.
 
-Considering the timeframe of 1 hour things have to be sacrificed.
+Considering the timeframe of 6 hour things have to be sacrificed.
 
 1. Unit testing, testing is important indeed, but my code is highly modular and due to that I tend to make few mistakes, users require an application, I believe testing can be done afterwards.
 2. Linting, linting only makes code beautiful, but as long as you follow a strong style you don't lose code quality, linting can also be done afterwards.
