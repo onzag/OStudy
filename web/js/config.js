@@ -1,2 +1,2 @@
 //TODO get rid of globals
-window.ENDPOINT = '//localhost:8080';
+window.ENDPOINT = 'http://188.166.59.211:9000';
