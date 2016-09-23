@@ -45,13 +45,17 @@ module.exports = function(app,models,sequelize){
 
 	//CHANGE THE TEACHER AVALIABILITY (includes student slots taken) - shortcut.
 	app.post('/api/v1/teacher/by-id/:id/avaliability',(req,res)=>{
-		let avaliability = JSON.stringify(req.body.avaliability);
+		let avaliability = req.body.avaliability;
 		models.teacher.update({avaliability},{
 			'where':{
 				'id':req.params.id
 			}
-		}).then((rs)=>{
-			res.json({'status':'OK','data':rs});
+		}).then((ac,ar)=>{
+			if (ac === 0){
+				res.json({'status':'ERROR','message':'teacher does not exist'});
+			} else {
+				res.json({'status':'OK'});
+			}
 		}).catch((e)=>{
 			res.json({'status':'ERROR','message':e.message});
 		});

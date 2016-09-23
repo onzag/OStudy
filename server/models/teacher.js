@@ -14,7 +14,14 @@ module.exports = function(sequelize){
 		avaliability:{
 			type: Sequelize.TEXT,
 			allowNull:false,
-			defaultValue:'{}'
+			defaultValue:'{}',
+			get: function()  {
+				let val = this.getDataValue('avaliability');
+				return JSON.parse(val);
+			},
+			set: function(val)  {
+				this.setDataValue('avaliability',JSON.stringify(val));
+			}
 		}
 	});
 }
