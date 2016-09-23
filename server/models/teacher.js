@@ -11,16 +11,16 @@ module.exports = function(sequelize){
 		},
 
 		//Shortcut storing data as JSON
-		avaliability:{
+		availability:{
 			type: Sequelize.TEXT,
 			allowNull:false,
 			defaultValue:'{}',
 			get: function()  {
-				let val = this.getDataValue('avaliability');
+				let val = this.getDataValue('availability');
 				return JSON.parse(val);
 			},
 			set: function(val)  {
-				this.setDataValue('avaliability',JSON.stringify(val));
+				this.setDataValue('availability',JSON.stringify(val));
 			}
 		}
 	});

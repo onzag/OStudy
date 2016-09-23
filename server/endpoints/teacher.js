@@ -43,10 +43,10 @@ module.exports = function(app,models,sequelize){
 		});
 	});
 
-	//CHANGE THE TEACHER AVALIABILITY (includes student slots taken) - shortcut.
-	app.post('/api/v1/teacher/by-id/:id/avaliability',(req,res)=>{
-		let avaliability = req.body.avaliability;
-		models.teacher.update({avaliability},{
+	//CHANGE THE TEACHER AVAILABILITY (includes student slots taken) - shortcut.
+	app.post('/api/v1/teacher/by-id/:id/availability',(req,res)=>{
+		let availability = req.body.availability;
+		models.teacher.update({availability},{
 			'where':{
 				'id':req.params.id
 			}
