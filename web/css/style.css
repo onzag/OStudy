@@ -59,8 +59,10 @@ td {
 }
 tr:nth-child(even) td { background: #F1F1F1; }
 tr:nth-child(even) td.taken { background: #76FF03; }
+tr:nth-child(even) td.taken-by-me { background: skyblue; }
 tr:nth-child(even) td.open { background: #CDDC39; }
 tr:nth-child(odd) td { background: #FEFEFE; }
 tr:nth-child(odd) td.taken { background: #76FF03; }
+tr:nth-child(odd) td.taken-by-me { background: skyblue; }
 tr:nth-child(odd) td.open { background: #CDDC39; }
 tr td:hover { background: #666; color: #FFF; }
