@@ -1,0 +1,14 @@
+Your task is to build a scheduler that will allow a teacher to define his availability and allow a student to book lessons.
+- Create only 2 pages, teacher page and student page.
+- No need for auth.
+- Teacher page: Teachers can define slots of varying lengths to present their full-week availability.
+- Student page: Students can see a list of teachers, and under each teacher they can see the teacher's full-week availability and have the ability to book one or multiple lessons. Lessons can be of various durations (if necessary, assume 30-minute lessons for a first iteration).
+- You can use any language and any DB, can be Node.js but most important is to use a language you are strong in
+- You can enter initial data to the DB manually if needed.
+- “Bonus” / “nice to have” features: canceling lessons, rating past lessons, lessons with different subjects, and anything else you think could be useful. Only attempt to work on these once the rest is done.
+
+*You will be evaluated for the functionality, code design, DB design and overall product sense.*
+
+When you are done please send us the code, and also attach release notes (including, for example, Known Issues or next ToDos). Immediately afterwards, please put the project up someplace on a server we can access via web.
+
+The more functionally complete the product, the better.
