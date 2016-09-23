@@ -35,7 +35,7 @@ function createTeacher(name,callback){
 function generateDataFrom(teacher){
 
 	window.TEACHER_ID = teacher.id;
-	window.AVALIABILITY = teacher.avaliability;
+	window.AVAILABILITY = teacher.availability;
 
 	function msToTime(duration) {
 		var minutes = parseInt((duration/(1000*60))%60)
@@ -62,7 +62,7 @@ function generateDataFrom(teacher){
 		result += '<td>' + strtime + '</td>';
 		
 		['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(function(day){
-			let slotData = teacher.avaliability[day] && teacher.avaliability[day][slot];
+			let slotData = teacher.availability[day] && teacher.availability[day][slot];
 			if (!slotData){
 				result += '<td class="closed" data-day="' + day + '" data-slot="' + slot + '">CLOSED</td>';
 			} else {
@@ -89,7 +89,7 @@ function generateDataFrom(teacher){
 			if (element.classList.contains('taken')){
 				return;
 			}
-			var clone = Object.assign({},window.AVALIABILITY);
+			var clone = Object.assign({},window.AVAILABILITY);
 			var day = element.dataset.day;
 			var slot = element.dataset.slot;
 			var cls;
@@ -112,17 +112,17 @@ function generateDataFrom(teacher){
 }
 
 function updateAvaliability(data,element,cls,name){
-	fetch(ENDPOINT + '/api/v1/teacher/by-id/' + TEACHER_ID + '/avaliability',{
+	fetch(ENDPOINT + '/api/v1/teacher/by-id/' + TEACHER_ID + '/availability',{
 		method: 'POST', 
 		headers: new Headers({
 			'Content-Type': 'application/json'
 		}),
-		body: JSON.stringify({'avaliability':data})
+		body: JSON.stringify({'availability':data})
 	}).then(function(data){
 		return data.json();
 	}).then(function(rs){
 		if (rs.status === 'OK'){
-			window.AVALIABILITY = data;
+			window.AVAILABILITY = data;
 			element.className = cls;
 			element.textContent = name;
 		} else {
